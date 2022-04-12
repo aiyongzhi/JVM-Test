@@ -2,9 +2,9 @@ public class 交换字符的最少次数 {
     /*
      * 题目描述:
      * 给定一个字符数组arr,arr中只有'G'字符和'B'字符
-     * 请只允许数组中两两元素交换的情况下
+     * 请只允许数组中相邻元素两两元素交换的情况下
      * 使得arr中所有G字符全在数组的左侧
-     * 所有R字符全在数组的右侧
+     * 所有B字符全在数组的右侧
      * 请返回最少的交换次数
      * */
 
@@ -33,16 +33,16 @@ public class 交换字符的最少次数 {
         arr[j] = tmp;
     }
 
-    //最优解 双指针 O(N)
+    //最优解 双指针 O(N) 贪心算法
     public static int getMinStep(char[] arr) {
-        if (arr == null || arr.length == 0) {
+        if(arr==null||arr.length==0){
             return 0;
         }
-        int count = 0;
-        int L = 0;
-        for (int R = 0; R < arr.length; R++) {
-            if (arr[R] == 'G') {
-                count += (R - L);
+        int L=0;//L指针指向盛放G的位置
+        int count=0;
+        for(int R=0;R<arr.length;R++){
+            if(arr[R]=='G'){
+                count+=(R-L);
                 L++;
             }
         }

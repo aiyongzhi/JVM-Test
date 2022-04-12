@@ -1,8 +1,5 @@
 import java.io.File;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class 文件目录下的文件数量 {
     /*
@@ -14,26 +11,28 @@ public class 文件目录下的文件数量 {
     //进行优化:只有文件夹才有必要压入队列中
     //如果是文件直接统计就ok
     public static int numbersOfFile(String URL) {
-        File root = new File(URL);
-        if (!root.isDirectory() && !root.isFile()) {
+        File root=new File(URL);
+        if(!root.isDirectory() && !root.isFile()){
             return 0;
         }
-        if (root.isFile()) {
+        if(root.isFile()){
             return 1;
         }
-        Queue<File> queue = new LinkedList<>();
-        int count = 0;
+        //是文件夹 图的宽度优先遍历
+        //只将文件夹放入队列
+        int count=0;
+        Queue<File> queue=new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()) {
-            File cur = queue.poll();
+        while(!queue.isEmpty()){
+            File cur=queue.poll();
             File[] files = cur.listFiles();
-            if (files != null) {
-                for (File file : files) {
-                    if (file.isDirectory()) {
-                        queue.add(file);
-                    }
-                    if (file.isFile()) {
+            if(files!=null){
+                for(File file:files){
+                    if(file.isFile()){
                         count++;
+                    }
+                    if(file.isDirectory()){
+                        queue.add(file);
                     }
                 }
             }
