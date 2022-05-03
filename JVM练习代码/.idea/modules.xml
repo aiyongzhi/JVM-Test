@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JVM练习代码.iml" filepath="$PROJECT_DIR$/JVM练习代码.iml" />
+      <module fileurl="file://$PROJECT_DIR$/双亲委派机制的测试/双亲委派机制的测试.iml" filepath="$PROJECT_DIR$/双亲委派机制的测试/双亲委派机制的测试.iml" />
+      <module fileurl="file://$PROJECT_DIR$/堆区/堆区.iml" filepath="$PROJECT_DIR$/堆区/堆区.iml" />
+      <module fileurl="file://$PROJECT_DIR$/类加载/类加载.iml" filepath="$PROJECT_DIR$/类加载/类加载.iml" />
+      <module fileurl="file://$PROJECT_DIR$/虚拟机栈/虚拟机栈.iml" filepath="$PROJECT_DIR$/虚拟机栈/虚拟机栈.iml" />
+    </modules>
+  </component>
+</project>
